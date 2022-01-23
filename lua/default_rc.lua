@@ -4,7 +4,7 @@ local consts = require('consts')
 config.colorscheme = 'tokyonight'
 
 config.lualine = {
-  theme = 'catppuccin'
+  theme = 'tokyonight'
 }
 
 config.plugins = {
