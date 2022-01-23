@@ -19,6 +19,7 @@ config.plugins = {
     cmp = {},
     lspinstaller = {},
     lspcolors = {},
+    cosmic_ui = {},
   },
   specify = {
     nvim_tree = {
@@ -39,6 +40,10 @@ config.plugins = {
 config.lsp = {
   misc = {
     signature = true,
+    cosmic_ui = {
+      rename = false,
+      code_actions = false,
+    },
   },
   servers = {
     tsserver = consts.NIL,

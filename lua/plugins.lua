@@ -38,4 +38,9 @@ return require('packer').startup(function()
   use 'AlphaTechnolog/pywal.nvim'
   use 'AlphaTechnolog/onedarker.nvim'
   use {'catppuccin/nvim', as = 'catppuccin'}
+  use({
+    'CosmicNvim/cosmic-ui',
+    requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+  })
+  use 'rcarriga/nvim-notify'
 end)

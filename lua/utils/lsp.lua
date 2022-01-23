@@ -39,6 +39,17 @@ function M.on_attach (client, bufnr)
   bufmap('n', 'gt', '<cmd>lua require("telescope.builtin").lsp_type_definitions()<cr>', opts)
   bufmap('n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', opts)
 
+  if config.lsp.misc.cosmic_ui.rename then
+    bufmap('n', 'gn', '<cmd>lua require("cosmic-ui").rename()<cr>', opts)
+  else
+    bufmap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+  end
+
+  if config.lsp.misc.cosmic_ui.code_actions then
+    bufmap('n', 'ga', '<cmd>lua require("cosmic-ui").code_actions()<cr>', opts)
+    bufmap('v', 'ga', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>', opts)
+  end
+
   -- diagnostics
   bufmap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
   bufmap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
