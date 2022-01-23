@@ -1,5 +1,12 @@
 vim.cmd [[packadd packer.nvim]]
 
+require('packer').init({
+  git = {
+    -- to prevent problems with slow connections
+    clone_timeout = 10000000
+  }
+})
+
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'folke/tokyonight.nvim', as = 'tokyonight'}
@@ -30,4 +37,5 @@ return require('packer').startup(function()
   use 'morhetz/gruvbox'
   use 'AlphaTechnolog/pywal.nvim'
   use 'AlphaTechnolog/onedarker.nvim'
+  use {'catppuccin/nvim', as = 'catppuccin'}
 end)
