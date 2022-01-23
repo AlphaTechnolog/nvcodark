@@ -28,4 +28,5 @@ return require('packer').startup(function()
   use 'ray-x/lsp_signature.nvim'
   use 'folke/lsp-colors.nvim'
   use 'morhetz/gruvbox'
+  use 'AlphaTechnolog/pywal.nvim'
 end)
