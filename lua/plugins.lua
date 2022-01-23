@@ -29,4 +29,5 @@ return require('packer').startup(function()
   use 'folke/lsp-colors.nvim'
   use 'morhetz/gruvbox'
   use 'AlphaTechnolog/pywal.nvim'
+  use 'AlphaTechnolog/onedarker.nvim'
 end)
