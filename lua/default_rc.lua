@@ -20,8 +20,15 @@ config.plugins = {
     lspinstaller = {},
     lspcolors = {},
     cosmic_ui = {},
+    notify = {},
   },
   specify = {
+    notify = {
+      options = {
+        -- in this table you can override the default configuration settings for
+        -- nvim notify, see `lua/plugconfigs/notify.lua`
+      },
+    },
     nvim_tree = {
       open_at_startup = true,
     },
@@ -41,8 +48,8 @@ config.lsp = {
   misc = {
     signature = true,
     cosmic_ui = {
-      rename = false,
-      code_actions = false,
+      rename = true,
+      code_actions = true,
     },
   },
   servers = {

@@ -48,7 +48,7 @@ function M.get_options ()
     },
     git = {
       enable = true,
-      ignore = true,
+      ignore = false,
       timeout = 500,
     },
     view = {
