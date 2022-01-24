@@ -95,10 +95,16 @@ Colorschemes in darknvim works as a function that is executed at colorschemes
 loading lifecycle. In this example we create the support for the
 [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim).
 
-To it first install the plugin in the file `lua/plugins.lua`:
+To it first install the plugin adding to the `additional_plugins` section in
+your private config, modify `lua/rc.lua`
 
 ```lua
-use 'navarasu/onedark.nvim'
+config.plugins = {
+  additional_plugins = {
+    {'navarasu/onedark.nvim', as = 'onedark'},
+  },
+  -- your other config
+}
 ```
 
 Then reload nvim, and install it with: `:PackerInstall` or `:PackerSync`.
