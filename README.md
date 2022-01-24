@@ -41,3 +41,5 @@ You can uninstall darknvim removing these directories:
 ![code](./.misc/code.png)
 ![notify](./.misc/notify.png)
 ![renaming](./.misc/renaming.png)
+
+> Using [cosmic-ui](https://github.com/CosmicNvim/cosmic-ui) for renaming and code actions
