@@ -2,7 +2,7 @@
 
 Another attempt to make of neovim a complete IDE.
 
-![show](./.video/show.mp4)
+![code](./.misc/code.png)
 
 ## Inspiration
 
@@ -35,3 +35,9 @@ You can uninstall darknvim removing these directories:
 - ~/.local/share/nvim # Lsps binaries and some other stuff
 - ~/.config/nvim # Darknvim config
 - ~/.cache/nvim # Cache of nvim like lsps logs
+
+## Galery
+
+![code](./.misc/code.png)
+![notify](./.misc/notify.png)
+![renaming](./.misc/renaming.png)
