@@ -6,7 +6,9 @@ if not present then
 end
 
 function M.setup ()
-  cosmic_ui.setup()
+  cosmic_ui.setup({
+    border_style = 'rounded',
+  })
 end
 
 return M
