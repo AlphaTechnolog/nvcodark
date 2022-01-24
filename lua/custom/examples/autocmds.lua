@@ -1,6 +1,6 @@
 local M = {}
 
-M.autocmds = function ()
+M.init = function ()
   -- write your autocmds here
   vim.cmd [[ autocmd FileType php setlocal tabstop=4 shiftwidth=4 ]]
   vim.cmd [[ autocmd FileType python setlocal tabstop=4 shiftwidth=4 ]]
