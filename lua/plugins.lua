@@ -45,6 +45,7 @@ return require('packer').startup(function()
     requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   })
   use 'rcarriga/nvim-notify'
+  use {'navarasu/onedark.nvim', as = 'onedark'}
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do

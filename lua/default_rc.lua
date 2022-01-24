@@ -1,10 +1,10 @@
 local config = {}
 local consts = require('consts')
 
-config.colorscheme = 'catppuccin'
+config.colorscheme = 'tokyonight'
 
 config.lualine = {
-  theme = 'catppuccin'
+  theme = 'tokyonight'
 }
 
 config.plugins = {
@@ -28,6 +28,9 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    onedark = {
+      style = 'dark',
+    },
     notify = {
       options = {
         -- in this table you can override the default configuration settings for
