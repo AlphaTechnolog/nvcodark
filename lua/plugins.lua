@@ -1,3 +1,5 @@
+local config = require('config')
+
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').init({
@@ -43,4 +45,9 @@ return require('packer').startup(function()
     requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   })
   use 'rcarriga/nvim-notify'
+
+  -- additional plugins
+  for _, plug in ipairs(config.plugins.additional_plugins) do
+    use(plug)
+  end
 end)

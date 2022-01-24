@@ -1,13 +1,18 @@
 local config = {}
 local consts = require('consts')
 
-config.colorscheme = 'tokyonight'
+config.colorscheme = 'catppuccin'
 
 config.lualine = {
-  theme = 'tokyonight'
+  theme = 'catppuccin'
 }
 
 config.plugins = {
+  -- with this you can add more plugins into your private config
+  -- write your plugins like the packer `use` function parameter
+  -- e.g:
+  -- {'navarasu/onedark.nvim', as = 'onedark'}
+  additional_plugins = {},
   to_enable = {
     nvim_tree = { has_mappings = true, has_autocmds = true },
     telescope = { has_mappings = true },
