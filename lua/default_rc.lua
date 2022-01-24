@@ -79,5 +79,11 @@ config.lsp = {
   },
 }
 
+config.custom = {
+  load = {
+    autocmds = false,
+  },
+}
+
 return config
 
