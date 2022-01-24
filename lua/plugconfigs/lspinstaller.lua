@@ -33,6 +33,9 @@ function M.setup ()
   for servername, options_func in pairs(config.lsp.servers) do
     local server_available, server = lspinstaller.get_server(servername)
     if server_available then
+      if not server:is_installed() then
+        server:install()
+      end
       server:on_ready(function ()
         local capabilities = lsp_utils.get_capabilities()
         local options = {
@@ -44,9 +47,6 @@ function M.setup ()
         end
         server:setup(options)
       end)
-      if not server:is_installed() then
-        server:install()
-      end
     end
   end
   M.settings()
