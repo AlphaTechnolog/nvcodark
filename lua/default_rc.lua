@@ -89,6 +89,8 @@ config.lsp = {
 config.custom = {
   load = {
     autocmds = false,
+    general = false,
+    mappings = false,
   },
 }
 
