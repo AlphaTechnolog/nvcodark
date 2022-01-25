@@ -11,9 +11,9 @@ Another attempt to make of neovim a complete IDE.
 
 ## Installation
 
-DarkNvim uses as a **important** depedency
+NvCoDark uses as a **important** depedency
 [packer](https://github.com/wbthomason/packer.nvim), you will install
-darknvim and packer with these commands
+nvcodark and packer with these commands
 
 > In the future I will install packer automatically where packer are not installed
 
@@ -22,7 +22,7 @@ test -d ~/.config/nvim && mv ~/.config/nvim ~/.config/nvim.old # Backup your old
 test -d ~/.local/share/nvim && mv ~/.local/share/nvim ~/.local/share/nvim.old # Backup your neovim plugins and another stuff
 test -d ~/.cache/nvim && mv ~/.cache/nvim ~/.cache/nvim.old # Backup neovim cache, like lsps logs
 cd ~/.config
-git clone https://github.com/AlphaTechnolog/darknvim nvim # Clone darknvim
+git clone https://github.com/AlphaTechnolog/nvcodark nvim # Clone nvcodark
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim # Install packer
 nvim +PackerInstall # Install the plugins
@@ -30,10 +30,10 @@ nvim +PackerInstall # Install the plugins
 
 ## Uninstallation
 
-You can uninstall darknvim removing these directories:
+You can uninstall nvcodark removing these directories:
 
 - ~/.local/share/nvim # Lsps binaries and some other stuff
-- ~/.config/nvim # Darknvim config
+- ~/.config/nvim # NvCoDark config
 - ~/.cache/nvim # Cache of nvim like lsps logs
 
 ## Galery
@@ -46,7 +46,7 @@ You can uninstall darknvim removing these directories:
 
 ## Creating your config
 
-By default darknvim reads a file named `lua/default_rc.lua`, it file is tracked
+By default nvcodark reads a file named `lua/default_rc.lua`, it file is tracked
 by git, is recommended you create your custom config, to it copy it file content
 and create a new file named `lua/rc.lua` that contains the `lua/default_rc.lua`
 content, you can do it with a simple sh command:
@@ -91,7 +91,7 @@ config.lualine = {
 
 ### Creating your custom colorscheme
 
-Colorschemes in darknvim works as a function that is executed at colorschemes
+Colorschemes in nvcodark works as a function that is executed at colorschemes
 loading lifecycle. In this example we create the support for the
 [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim).
 
