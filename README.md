@@ -2,7 +2,7 @@
 
 Another attempt to make of neovim a complete IDE.
 
-![code](./.misc/code.png)
+![rice](./.misc/rice.png)
 
 ## Inspiration
 
@@ -32,15 +32,9 @@ nvim +PackerInstall # Install the plugins
 
 You can uninstall nvcodark removing these directories:
 
-- ~/.local/share/nvim # Lsps binaries and some other stuff
-- ~/.config/nvim # NvCoDark config
-- ~/.cache/nvim # Cache of nvim like lsps logs
-
-## Galery
-
-![code](./.misc/code.png)
-![notify](./.misc/notify.png)
-![renaming](./.misc/renaming.png)
+- `~/.local/share/nvim`: Lsps binaries and some other stuff
+- `~/.config/nvim`: NvCoDark config
+- `~/.cache/nvim`: Cache of nvim like lsps logs
 
 > Using [cosmic-ui](https://github.com/CosmicNvim/cosmic-ui) for renaming and code actions
 
@@ -199,3 +193,10 @@ config.custom = {
 It will load a file in `lua/custom/requests.lua`
 
 The value is if you want to enable it or not (boolean val)
+
+## Galery
+
+![rice](./.misc/rice.png)
+![code](./.misc/code.png)
+![notify](./.misc/notify.png)
+![renaming](./.misc/renaming.png)
