@@ -200,3 +200,7 @@ The value is if you want to enable it or not (boolean val)
 ![code](./.misc/code.png)
 ![notify](./.misc/notify.png)
 ![renaming](./.misc/renaming.png)
+
+## Thanks to
+
+- [K0K41](https://github.com/K0K41) (for the name of nvcodark)
