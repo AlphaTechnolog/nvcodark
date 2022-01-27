@@ -33,6 +33,10 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    material = {
+      style = 'deep ocean',
+      options = {},
+    },
     onedark = {
       style = 'dark',
     },
