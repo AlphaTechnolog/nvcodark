@@ -1,8 +1,18 @@
 local M = {}
 local present, bufferline = pcall(require, 'bufferline')
+local config = require('config')
+local tables_utils = require('utils.tables')
 
-function M.setup ()
-  bufferline.setup {
+if not present then
+  return {
+    setup = function ()
+      error('[WARN/plugins/bufferline]: Cannot import bufferline')
+    end
+  }
+end
+
+function M.enable ()
+  bufferline.setup(tables_utils.extend({
     options = {
       numbers = "none",
       close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
@@ -36,8 +46,13 @@ function M.setup ()
       -- [focused and unfocused]. eg: { '|', '|' }
       always_show_bufferline = true,
     },
-  }
+  }, config.tabbar.options))
+end
 
+function M.setup ()
+  if config.tabbar.backend == 'bufferline' then
+    M.enable()
+  end
 end
 
 return M

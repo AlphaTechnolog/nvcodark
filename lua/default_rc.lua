@@ -7,6 +7,11 @@ config.lualine = {
   theme = 'tokyonight'
 }
 
+config.tabbar = {
+  backend = 'bufferline', -- lualine | bufferline | none: none to don't load tabbar
+  options = {}, -- the options for the backend
+}
+
 config.plugins = {
   -- with this you can add more plugins into your private config
   -- write your plugins like the packer `use` function parameter
