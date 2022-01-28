@@ -33,6 +33,9 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    tokyonight = {
+      style = 'night',
+    },
     material = {
       style = 'deep ocean',
       options = {},

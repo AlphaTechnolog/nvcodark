@@ -1,5 +1,6 @@
 local M = {}
-local present, tokyonight = pcall(require, 'tokyonight')
+local present = pcall(require, 'tokyonight')
+local config = require('config')
 
 if not present then
   return {
@@ -10,7 +11,8 @@ if not present then
 end
 
 function M.enable ()
-  vim.g.tokyonight_style = 'night'
+  local tokyonight_conf = config.plugins.specify.tokyonight or {}
+  vim.g.tokyonight_style = tokyonight_conf.style or 'night'
   vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
   vim.cmd [[ colorscheme tokyonight ]]
 end
