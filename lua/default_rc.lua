@@ -35,6 +35,12 @@ config.plugins = {
   specify = {
     tokyonight = {
       style = 'night',
+      italics = {
+        comments = true,
+        keywords = false,
+        variables = false,
+        functions = false
+      },
     },
     material = {
       style = 'deep ocean',

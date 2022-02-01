@@ -30,8 +30,8 @@ function M.isempty (v)
 end
 
 function M.setup ()
-  for servername, options_func in pairs(config.lsp.servers) do
-    local server_available, server = lspinstaller.get_server(servername)
+  for server_name, options_func in pairs(config.lsp.servers) do
+    local server_available, server = lspinstaller.get_server(server_name)
     if server_available then
       if not server:is_installed() then
         server:install()

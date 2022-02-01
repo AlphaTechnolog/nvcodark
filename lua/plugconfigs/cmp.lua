@@ -54,12 +54,6 @@ function M.setup ()
         luasnip.lsp_expand(args.body) -- For `luasnip` users.
       end,
     },
-    enabled = function ()
-      -- disable completions in comments
-      local context = require('cmp.config.context')
-      return not context.in_treesitter_capture('comment')
-        and not context.in_syntax_group('Comment')
-    end,
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
