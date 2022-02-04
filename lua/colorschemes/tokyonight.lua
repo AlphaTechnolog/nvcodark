@@ -18,7 +18,6 @@ function M.enable ()
   vim.g.tokyonight_italic_keywords = tokyonight_conf.italics.keywords
   vim.g.tokyonight_italic_functions = tokyonight_conf.italics.functions
   vim.g.tokyonight_italic_variables = tokyonight_conf.italics.variables
-  vim.g.tokyonight_hide_inactive_statusline = true
   vim.cmd [[ colorscheme tokyonight ]]
 end
 

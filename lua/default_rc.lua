@@ -33,6 +33,9 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    catppuccin = {
+      tree_contrast = true,
+    },
     tokyonight = {
       style = 'night',
       italics = {
