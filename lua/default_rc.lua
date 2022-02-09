@@ -59,7 +59,7 @@ config.plugins = {
       },
     },
     nvim_tree = {
-      open_at_startup = true,
+      open_at_startup = false,
     },
     treesitter = {
       ensure_installed = {
