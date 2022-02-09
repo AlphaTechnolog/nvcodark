@@ -48,6 +48,7 @@ return require('packer').startup(function()
   use 'rcarriga/nvim-notify'
   use {'navarasu/onedark.nvim', as = 'onedark'}
   use 'marko-cerovac/material.nvim'
+  use 'yashguptaz/calvera-dark.nvim'
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
