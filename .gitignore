@@ -2,3 +2,4 @@ lua/rc.lua
 lua/custom/*
 !lua/custom/examples
 plugin
+plugin/*
