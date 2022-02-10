@@ -33,6 +33,10 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    gruvbox = {
+      tree_contrast = true,
+      telescope_integration = true,
+    },
     catppuccin = {
       tree_contrast = true,
     },
