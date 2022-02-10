@@ -36,6 +36,7 @@ config.plugins = {
     gruvbox = {
       tree_contrast = true,
       telescope_integration = true,
+      borders = true,
     },
     catppuccin = {
       tree_contrast = true,
