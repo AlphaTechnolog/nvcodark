@@ -9,7 +9,7 @@ function M.enable ()
   hi('EndOfBuffer', { guifg = '#282828' }, false)
   if config.plugins.specify.gruvbox.telescope_integration then
     hi('TelescopeSelection', { guibg = '#282828', guifg = '#b8bb26' }, false)
-    hi('TelescopeBorder', { guifg = '#282828' }, false)
+    hi('TelescopeBorder', { guifg = '#282828', guifg = '#a89984' }, false)
   end
   if config.plugins.specify.gruvbox.borders == false then
     hi('VertSplit', { guifg = '#282828' }, false)
