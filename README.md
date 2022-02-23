@@ -2,7 +2,7 @@
 
 Another attempt to make of neovim a complete IDE.
 
-![rice](./.misc/rice.png)
+![nvcodark1](./.misc/nvcodark1.png)
 
 ## Thanks to
 
@@ -200,7 +200,6 @@ The value is if you want to enable it or not (boolean val)
 
 ## Galery
 
-![rice](./.misc/rice.png)
-![code](./.misc/code.png)
-![notify](./.misc/notify.png)
-![renaming](./.misc/renaming.png)
+![nvcodark1](./.misc/nvcodark1.png)
+![nvcodark2](./.misc/nvcodark2.png)
+![nvcodark3](./.misc/nvcodark3.png)
