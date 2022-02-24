@@ -63,10 +63,14 @@ your configuration may not be shared with others people.
 I will add more but in this moments it only support these themes:
 
 - tokyonight (default)
+- ayu dark
+- calvera
 - catppuccin
-- onedarker
-- pywal
 - gruvbox
+- material
+- onedark
+- onedarker (by me :D)
+- pywal (by me :D)
 
 ### Enabling a theme
 
