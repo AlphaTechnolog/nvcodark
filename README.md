@@ -142,11 +142,144 @@ Then activate it in your config, put this in `~/.config/nvim/lua/rc.lua`:
 config.colorscheme = 'onedark' -- it would load /lua/colorschemes/onedark.lua and call enable
 
 config.lualine = {
-  theme = 'onedark', -- change thet lualine theme to onedark (it's provided by the theme)
+  theme = 'onedark', -- change that lualine theme to onedark (it's provided by the theme)
 }
 ```
 
 And that's all.
+
+## Language servers
+
+The languages servers provides intellisense, code actions and another features like vscode, to enable it exists the
+property `config.lsp` in the rc file.
+
+### Initial structure
+
+By default it look like this:
+
+```lua
+config.lsp = {
+  misc = {
+    signature = true,
+    cosmic_ui = {
+      rename = true,
+      code_actions = true,
+    },
+  },
+  servers = {
+    tsserver = consts.NIL,
+    pylsp = consts.NIL,
+    vuels = consts.NIL,
+    clangd = consts.NIL,
+    emmet_ls = consts.NIL,
+    sumneko_lua = function()
+      local runtime_path = vim.split(package.path, ';')
+      table.insert(runtime_path, 'lua/?.lua')
+      table.insert(runtime_path, 'lua/?/init.lua')
+
+      return {
+        settings = {
+          Lua = {
+            runtime = {
+              version = 'LuaJIT',
+              path = runtime_path,
+            },
+            diagnostics = {
+              globals = {'vim'},
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+              enable = false,
+            },
+          }
+        }
+      }
+    end
+  },
+}
+```
+
+In the first section:
+
+```lua
+config.lsp = {
+  misc = {
+    signature = true,
+    cosmic_ui = {
+      rename = true,
+      code_actions = true,
+    },
+  },
+}
+```
+
+We are defining if the lsp will configure features like signature or for cosmic ui the rename input
+and the code actions, if you set the rename of cosmic ui to false, nvcodark will use the builtin input
+in neovim to rename.
+
+And the next section define which language servers would run (check [this](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) for more information!):
+
+```lua
+config.lsp = {
+  servers = {
+    tsserver = consts.NIL,
+    pylsp = consts.NIL,
+    vuels = consts.NIL,
+    clangd = consts.NIL,
+    emmet_ls = consts.NIL,
+    sumneko_lua = function()
+      local runtime_path = vim.split(package.path, ';')
+      table.insert(runtime_path, 'lua/?.lua')
+      table.insert(runtime_path, 'lua/?/init.lua')
+
+      return {
+        settings = {
+          Lua = {
+            runtime = {
+              version = 'LuaJIT',
+              path = runtime_path,
+            },
+            diagnostics = {
+              globals = {'vim'},
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+              enable = false,
+            },
+          }
+        }
+      }
+    end
+  }
+}
+```
+
+With ```consts.NIL``` you can skip the setup function for the lsp server, but you can pass a function that returns the custom options for the language server!
+
+To install the language server in your system use ```:LspInstall <lsp-server>``` (I implement lsp-installer)
+
+### Lsp server mappings
+
+Some mappings for lsp servers are:
+
+- gd: open definitions with telescope
+- gD: go to declaration
+- gi: open implementations with telescope
+- gt: open type definitions with telescope
+- gr: open references with telescope
+- gn: rename variable or function or class...
+- ga: code actions (works in visual mode too)
+- [g: go to previous diagnostic
+- ]g: go to next diagnostic
+- ge: open diagnostics in a float window
+- \<leader\>ge: open diagnostics with telescope
+- K: hover
+- \<leader\>gf: format document (works in visual mode too)
+- \<C-K\>: Open signature
 
 ## Custom hooks
 
