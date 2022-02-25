@@ -42,12 +42,13 @@ You can uninstall nvcodark removing these directories:
 
 ## Creating your config
 
-By default nvcodark reads a file named `lua/default_rc.lua`, it file is tracked
+By default nvcodark reads a file named `~/.config/nvim/lua/default_rc.lua`, it file is tracked
 by git, is recommended you create your custom config, to it copy it file content
-and create a new file named `lua/rc.lua` that contains the `lua/default_rc.lua`
+and create a new file named `~/.config/nvim/lua/rc.lua` that contains the `~/.config/nvim/lua/default_rc.lua`
 content, you can do it with a simple sh command:
 
 ```sh
+cd ~/.config/nvim
 cp -r ./lua/default_rc.lua ./lua/rc.lua
 ```
 
@@ -72,10 +73,10 @@ I will add more but in this moments it only support these themes:
 
 ### Enabling a theme
 
-Check if the theme name exists in the colorschemes folder (`lua/colorschemes`)
+Check if the theme name exists in the colorschemes folder (`~/.config/nvim/lua/colorschemes`)
 
 Example: If your colorscheme name is catppuccin, you may check if the file
-`lua/colorscheme/catppuccin.lua` exists if yes put this in your config:
+`~/.config/nvim/lua/colorscheme/catppuccin.lua` exists if yes put this in your config:
 
 ```lua
 config.colorscheme = 'catppuccin'
@@ -96,7 +97,7 @@ loading lifecycle. In this example we create the support for the
 [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim).
 
 To it first install the plugin adding to the `additional_plugins` section in
-your private config, modify `lua/rc.lua`
+your private config, modify `~/.config/nvim/lua/rc.lua`
 
 ```lua
 config.plugins = {
@@ -109,7 +110,7 @@ config.plugins = {
 
 Then reload nvim, and install it with: `:PackerInstall` or `:PackerSync`.
 
-Create a file named `lua/colorschemes/onedark.lua`, basically it may return a table with
+Create a file named `~/.config/nvim/lua/colorschemes/onedark.lua`, basically it may return a table with
 the property enable that may be a function which is supposed to activate the theme.
 
 Put this:
@@ -135,7 +136,7 @@ return M
 
 Basically it handles possibly errors at try to import a not installed plugin.
 
-Then activate it in your config, put this in `lua/rc.lua`:
+Then activate it in your config, put this in `~/.config/nvim/lua/rc.lua`:
 
 ```lua
 config.colorscheme = 'onedark' -- it would load /lua/colorschemes/onedark.lua and call enable
@@ -155,7 +156,7 @@ work of neovim in your custom and private config.
 Exists a folder with some examples, let's create a custom hook that defines
 some autocmds (set `tabstop=4 shiftwidth=4 expandtab` for php files and python files).
 
-To it, copy the file `lua/custom/examples/autocmds.lua` to `lua/custom/autocmds.lua`,
+To it, copy the file `~/.config/nvim/lua/custom/examples/autocmds.lua` to `~/.config/nvim/lua/custom/autocmds.lua`,
 and edit it, you will get a file content like this:
 
 ```lua
@@ -171,7 +172,7 @@ return M
 ```
 
 It's exactly where we need, the module exports a table that contains the function
-`init`, and it's executed as main function by `lua/customloader.lua`.
+`init`, and it's executed as main function by `~/.config/nvim/lua/customloader.lua`.
 
 ### Activating the autocmds custom hook
 
@@ -186,7 +187,7 @@ config.custom = {
 ```
 
 The load key contains a table where the key of an item is the name of the file that will be
-loader in `lua/custom/x.lua` where `x` is the name of the key. e.g:
+loader in `~/.config/nvim/lua/custom/x.lua` where `x` is the name of the key. e.g:
 
 ```lua
 config.custom = {
@@ -196,7 +197,7 @@ config.custom = {
 }
 ```
 
-It will load a file in `lua/custom/requests.lua`
+It will load a file in `~/.config/nvim/lua/custom/requests.lua`
 
 The value is if you want to enable it or not (boolean val)
 
