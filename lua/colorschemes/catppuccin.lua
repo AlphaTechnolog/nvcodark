@@ -18,6 +18,9 @@ function M.enable ()
   vim.cmd [[ colorscheme catppuccin ]]
   if config.plugins.specify.catppuccin.tree_contrast == false then
     hi('NvimTreeNormal', { guibg = colors.black2 }, false)
+    if config.plugins.specify.nvim_tree.hide_statusline == true then
+      hi('NvimTreeStatusLineNC', { guibg = colors.black2 }, false)
+    end
   end
 end
 
