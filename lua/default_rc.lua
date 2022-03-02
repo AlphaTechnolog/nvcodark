@@ -59,7 +59,8 @@ config.plugins = {
       custom_opts = {
         darkSidebar = false,
       },
-      darker = true
+      darker = true,
+      custom_folder_icons = true
     },
     notify = {
       options = {

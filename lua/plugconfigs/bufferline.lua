@@ -13,6 +13,14 @@ end
 
 function M.enable ()
   bufferline.setup(tables_utils.extend({
+    highlights = {
+      fill = {
+        guibg = {
+          attribute = "bg",
+          highlight = "Normal"
+        }
+      },
+    },
     options = {
       numbers = "none",
       close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"

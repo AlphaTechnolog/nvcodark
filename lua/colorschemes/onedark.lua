@@ -17,6 +17,7 @@ function M.get_darker_palette ()
     dark = '#1e222a',
     soft = '#282c34',
     fg = '#5c6370',
+    blue = '#61afef'
   }
 end
 
@@ -56,10 +57,18 @@ function M.get_opts()
   return opts
 end
 
+function M.custom_nvimtree_folder_icons ()
+  local palette = M.get_darker_palette()
+  hi('NvimTreeFolderIcon', { guifg = palette.blue }, false)
+end
+
 function M.enable ()
   onedark.setup(M.get_opts())
   if config.plugins.specify.onedark.darker then
     M.darker_highlights()
+  end
+  if config.plugins.specify.onedark.custom_folder_icons then
+    M.custom_nvimtree_folder_icons()
   end
 end
 
