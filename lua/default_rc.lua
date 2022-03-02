@@ -42,6 +42,7 @@ config.plugins = {
       tree_contrast = true,
     },
     tokyonight = {
+      tree_contrast = false,
       style = 'night',
       italics = {
         comments = true,

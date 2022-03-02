@@ -1,6 +1,7 @@
 local M = {}
 local present = pcall(require, 'tokyonight')
 local config = require('config')
+local hi = vim.highlight.create
 
 if not present then
   return {
@@ -8,6 +9,18 @@ if not present then
       print('[WARN/tokyonight]: Cannot import tokyonight')
     end
   }
+end
+
+function M.disable_tree_contrast ()
+  local colors = require('tokyonight.colors').setup()
+  local keys = {
+    'NvimTreeNormal', 'NvimTreeNormalNC',
+    'NvimTreeStatusLine', 'NvimTreeStatusLineNC',
+  }
+  for _, key in ipairs(keys) do
+    hi(key, { guibg = colors.bg }, false)
+  end
+  hi('NvimTreeVertSplit', { guibg = colors.bg, guifg = colors.bg }, false)
 end
 
 function M.enable ()
@@ -19,6 +32,9 @@ function M.enable ()
   vim.g.tokyonight_italic_functions = tokyonight_conf.italics.functions
   vim.g.tokyonight_italic_variables = tokyonight_conf.italics.variables
   vim.cmd [[ colorscheme tokyonight ]]
+  if config.plugins.specify.tokyonight.tree_contrast == false then
+    M.disable_tree_contrast()
+  end
 end
 
 return M
