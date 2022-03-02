@@ -55,7 +55,11 @@ config.plugins = {
       options = {},
     },
     onedark = {
-      style = 'dark',
+      -- custom_opts: override configuration for base onedark plugin, see: https://github.com/monsonjeremy/onedark.nvim
+      custom_opts = {
+        darkSidebar = false,
+      },
+      darker = true
     },
     notify = {
       options = {

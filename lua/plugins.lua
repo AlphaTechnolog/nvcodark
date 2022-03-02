@@ -46,8 +46,8 @@ return require('packer').startup(function()
     requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   })
   use 'rcarriga/nvim-notify'
-  use {'navarasu/onedark.nvim', as = 'onedark'}
   use 'marko-cerovac/material.nvim'
+  use 'monsonjeremy/onedark.nvim'
   use 'yashguptaz/calvera-dark.nvim'
 
   -- additional plugins
