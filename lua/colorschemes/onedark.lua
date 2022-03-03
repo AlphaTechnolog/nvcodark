@@ -14,11 +14,38 @@ end
 
 function M.get_darker_palette ()
   return {
+    contrast = '#1c1f27',
     dark = '#1e222a',
     soft = '#282c34',
     fg = '#5c6370',
     blue = '#61afef'
   }
+end
+
+function M.apply_darker_tree_contrast ()
+  local palette = M.get_darker_palette()
+  local highlights = {'NvimTreeNormal', 'NvimTreeNormalNC', 'NvimTreeStatusLine', 'NvimTreeStatusLineNC'}
+  for _, highlight in ipairs(highlights) do
+    hi(highlight, { guibg = palette.contrast }, false)
+  end
+  hi('NvimTreeEndOfBuffer', { guibg = palette.contrast, guifg = palette.contrast }, false)
+end
+
+function M.apply_soft_tree_contrast ()
+  local highlights = {'NvimTreeNormal', 'NvimTreeNormalNC', 'NvimTreeNormalStatusLine', 'NvimTreeNormalStatusLineNC'}
+  for _, highlight in ipairs(highlights) do
+    hi(highlight, { guibg = '#21252b' }, false)
+  end
+  hi('NvimTreeEndOfBuffer', { guibg = '#21252b', guifg = '#21252b' }, false)
+  hi('NvimTreeVertSplit', { guibg = '#282c34', guifg = '#282c34' }, false)
+end
+
+function M.apply_tree_contrast ()
+  if config.plugins.specify.onedark.darker then
+    M.apply_darker_tree_contrast()
+  else
+    M.apply_soft_tree_contrast()
+  end
 end
 
 -- apply custom highlights to solve fg_gutter problems
@@ -47,7 +74,7 @@ end
 
 function M.get_opts()
   local sidebars = {'NvimTree', 'packer', 'terminal', 'qf', 'vista_kind'}
-  local opts = { sidebars = sidebars }
+  local opts = { sidebars = sidebars, darkSidebar = false }
   -- loading custom configuration for onedark in lua/rc.lua file
   opts = tbls.extend(opts, config.plugins.specify.onedark.custom_opts or {})
   if config.plugins.specify.onedark.darker then
@@ -62,13 +89,24 @@ function M.custom_nvimtree_folder_icons ()
   hi('NvimTreeFolderIcon', { guifg = palette.blue }, false)
 end
 
+function M.onedark_telescope_integration ()
+  local palette = M.get_darker_palette()
+  hi('TelescopeBorder', { guifg = palette.blue }, false)
+end
+
 function M.enable ()
   onedark.setup(M.get_opts())
+  if config.plugins.specify.onedark.tree_contrast then
+    M.apply_tree_contrast()
+  end
   if config.plugins.specify.onedark.darker then
     M.darker_highlights()
   end
   if config.plugins.specify.onedark.custom_folder_icons then
     M.custom_nvimtree_folder_icons()
+  end
+  if config.plugins.specify.onedark.telescope_integration then
+    M.onedark_telescope_integration()
   end
 end
 

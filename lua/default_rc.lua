@@ -64,10 +64,10 @@ config.plugins = {
     },
     onedark = {
       -- custom_opts: override configuration for base onedark plugin, see: https://github.com/monsonjeremy/onedark.nvim
-      custom_opts = {
-        darkSidebar = false,
-      },
+      custom_opts = {},
       darker = true,
+      telescope_integration = true,
+      tree_contrast = true,
       custom_folder_icons = true
     },
     notify = {
