@@ -4,7 +4,7 @@ local hi = vim.highlight.create
 
 function M.add_nvimtree_contrast ()
   local palette = {
-    bg = '#20252a',
+    bg = '#272f35',
     softbg = '#2b3339'
   }
   local his = {'NvimTreeNormal', 'NvimTreeNormalNC', 'NvimTreeStatusLine', 'NvimTreeStatusLineNC'}
