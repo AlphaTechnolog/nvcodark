@@ -58,7 +58,7 @@ function M.get_opts ()
       },
       js = {
         icon = "",
-        color = M.get_color('js'),
+        color = '#ebcb8b',
         name = "js",
       },
       kt = {
