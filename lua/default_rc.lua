@@ -42,6 +42,7 @@ config.plugins = {
       tree_contrast = true,
     },
     tokyonight = {
+      custom_folder_icons = true,
       tree_contrast = false,
       style = 'night',
       italics = {

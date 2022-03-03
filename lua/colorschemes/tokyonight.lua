@@ -23,6 +23,11 @@ function M.disable_tree_contrast ()
   hi('NvimTreeVertSplit', { guibg = colors.bg, guifg = colors.bg }, false)
 end
 
+function M.custom_nvimtree_folder_icons ()
+  local colors = require('tokyonight.colors').setup()
+  hi('NvimTreeFolderIcon', { guifg = colors.blue }, false)
+end
+
 function M.enable ()
   local tokyonight_conf = config.plugins.specify.tokyonight or {}
   vim.g.tokyonight_style = tokyonight_conf.style or 'night'
@@ -34,6 +39,9 @@ function M.enable ()
   vim.cmd [[ colorscheme tokyonight ]]
   if config.plugins.specify.tokyonight.tree_contrast == false then
     M.disable_tree_contrast()
+  end
+  if config.plugins.specify.tokyonight.custom_folder_icons == true then
+    M.custom_nvimtree_folder_icons()
   end
 end
 
