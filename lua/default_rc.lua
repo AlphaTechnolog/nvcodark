@@ -31,12 +31,13 @@ config.plugins = {
     lspcolors = {},
     cosmic_ui = {},
     notify = {},
+    icons = {}
   },
   specify = {
     everforest = {
       italic = true,
       italic_comment = false,
-      tree_contrast = false
+      tree_contrast = true
     },
     gruvbox = {
       tree_contrast = true,
