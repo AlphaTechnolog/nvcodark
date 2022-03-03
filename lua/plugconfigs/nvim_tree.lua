@@ -68,7 +68,35 @@ function M.get_options ()
   }
 end
 
+function M.setup_opts ()
+  vim.g.nvim_tree_indent_markers = 1
+  vim.g.nvim_tree_add_trailing = 0
+  vim.g.nvim_tree_highlight_opened_files = 0
+  vim.g.nvim_tree_icons = {
+    default = "",
+    symlink = "",
+    git = {
+      deleted = "",
+      ignored = "◌",
+      renamed = "➜",
+      staged = "✓",
+      unmerged = "",
+      unstaged = "✗",
+      untracked = "★",
+    },
+    folder = {
+      default = "",
+      empty = "",
+      empty_open = "",
+      open = "",
+      symlink = "",
+      symlink_open = "",
+    },
+  }
+end
+
 function M.setup ()
+  M.setup_opts()
   ntree.setup(M.get_options())
 end
 
