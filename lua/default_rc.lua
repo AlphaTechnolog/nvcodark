@@ -33,6 +33,10 @@ config.plugins = {
     notify = {},
   },
   specify = {
+    everforest = {
+      italic = true,
+      italic_comment = false
+    },
     gruvbox = {
       tree_contrast = true,
       telescope_integration = true,

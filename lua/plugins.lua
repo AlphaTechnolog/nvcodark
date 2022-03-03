@@ -49,6 +49,7 @@ return require('packer').startup(function()
   use 'marko-cerovac/material.nvim'
   use 'monsonjeremy/onedark.nvim'
   use 'yashguptaz/calvera-dark.nvim'
+  use 'sainnhe/everforest'
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
