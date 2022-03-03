@@ -25,7 +25,21 @@ end
 
 function M.custom_nvimtree_folder_icons ()
   local colors = require('tokyonight.colors').setup()
-  hi('NvimTreeFolderIcon', { guifg = colors.blue }, false)
+  hi('NvimTreeFolderIcon', { guifg = colors.cyan }, false)
+end
+
+function M.custom_tree_contrast ()
+  local colors = require('tokyonight.colors').setup()
+  local contrastbg = '#181922'
+  local keys = {
+    'NvimTreeNormal', 'NvimTreeNormalNC',
+    'NvimTreeStatusLine', 'NvimTreeStatusLineNC',
+  }
+  for _, key in ipairs(keys) do
+    hi(key, { guibg = contrastbg }, false)
+  end
+  hi('NvimTreeVertSplit', { guibg = colors.bg, guifg = colors.bg }, false)
+  hi('NvimTreeEndOfBuffer', { guibg = contrastbg, guifg = contrastbg }, false)
 end
 
 function M.enable ()
@@ -39,6 +53,8 @@ function M.enable ()
   vim.cmd [[ colorscheme tokyonight ]]
   if config.plugins.specify.tokyonight.tree_contrast == false then
     M.disable_tree_contrast()
+  else
+    M.custom_tree_contrast()
   end
   if config.plugins.specify.tokyonight.custom_folder_icons == true then
     M.custom_nvimtree_folder_icons()
