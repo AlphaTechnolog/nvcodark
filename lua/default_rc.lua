@@ -35,7 +35,8 @@ config.plugins = {
   specify = {
     everforest = {
       italic = true,
-      italic_comment = false
+      italic_comment = false,
+      tree_contrast = false
     },
     gruvbox = {
       tree_contrast = true,

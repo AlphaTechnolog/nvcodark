@@ -17,7 +17,7 @@ function M.enable ()
       fill = {
         guibg = {
           attribute = "bg",
-          highlight = "Normal"
+          highlight = "NvimTreeNormal"
         }
       },
     },
