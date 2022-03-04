@@ -58,10 +58,10 @@ Some themes (not all)
 ![material](./.misc/showcase/material-nvcodark.png)
 
 ### Onedark
-![onedark](./.misc/showcase/onedark.png)
+![onedark](./.misc/showcase/onedark-nvcodark.png)
 
 ### Tokyonight
-![tokyonight](./.misc/showcase/tokyonight.png)
+![tokyonight](./.misc/showcase/tokyonight-nvcodark.png)
 
 ## Creating your config
 
