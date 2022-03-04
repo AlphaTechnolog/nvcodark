@@ -70,6 +70,7 @@ I will add more but in this moments it only support these themes:
 - onedark
 - onedarker (by me :D)
 - pywal (by me :D)
+- everforest
 
 ### Enabling a theme
 
