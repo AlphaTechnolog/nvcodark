@@ -4,7 +4,7 @@ local config = require('config')
 function M.hide_statusline ()
   local buftype = vim.api.nvim_buf_get_option(0, 'ft')
   local set_opt = vim.api.nvim_set_option
-  if buftype == 'NvimTree' then
+  if buftype == 'NvimTree' or buftype == 'toggleterm' then
     set_opt('laststatus', 0)
     return
   end

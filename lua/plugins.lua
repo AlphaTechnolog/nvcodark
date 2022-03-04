@@ -50,6 +50,7 @@ return require('packer').startup(function()
   use 'monsonjeremy/onedark.nvim'
   use 'yashguptaz/calvera-dark.nvim'
   use 'sainnhe/everforest'
+  use {"akinsho/toggleterm.nvim"}
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do

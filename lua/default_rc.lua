@@ -31,7 +31,8 @@ config.plugins = {
     lspcolors = {},
     cosmic_ui = {},
     notify = {},
-    icons = {}
+    icons = {},
+    toggleterm = {},
   },
   specify = {
     everforest = {

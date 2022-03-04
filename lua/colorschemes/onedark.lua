@@ -29,6 +29,7 @@ function M.apply_darker_tree_contrast ()
     hi(highlight, { guibg = palette.contrast }, false)
   end
   hi('NvimTreeEndOfBuffer', { guibg = palette.contrast, guifg = palette.contrast }, false)
+  hi('TerminalNormal', { guibg = palette.contrast }, false)
 end
 
 function M.apply_soft_tree_contrast ()
@@ -38,6 +39,7 @@ function M.apply_soft_tree_contrast ()
   end
   hi('NvimTreeEndOfBuffer', { guibg = '#21252b', guifg = '#21252b' }, false)
   hi('NvimTreeVertSplit', { guibg = '#282c34', guifg = '#282c34' }, false)
+  hi('TerminalNormal', { guibg = '#21252b' }, false)
 end
 
 function M.apply_tree_contrast ()
