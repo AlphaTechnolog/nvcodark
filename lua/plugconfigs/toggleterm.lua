@@ -38,8 +38,8 @@ function M.open_horizontal ()
 end
 
 function M.mappings ()
-  map.set('n', '<C-t>', map.cmd('lua require("plugconfigs.toggleterm").open_horizontal()'))
-  map.set('n', '<C-M-t>', map.cmd('ToggleTerm direction=horizontal'))
+  map.set('n', '<C-t>', map.cmd('ToggleTerm direction=horizontal'))
+  map.set('n', '<C-M-t>', map.cmd('lua require("plugconfigs.toggleterm").open_horizontal()')) -- dangerous
   map.set('n', '<C-v>', map.cmd('ToggleTerm direction=vertical'))
   map.set('n', '<C-f>', map.cmd('ToggleTerm direction=float'))
 end
