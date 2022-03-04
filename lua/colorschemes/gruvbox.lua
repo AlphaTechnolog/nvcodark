@@ -15,10 +15,10 @@ function M.enable ()
     hi('VertSplit', { guifg = '#282828' }, false)
   end
   if config.plugins.specify.gruvbox.tree_contrast then
-    hi('NvimTreeNormal', { guibg = '#1d2021' }, false)
-    hi('NvimTreeNormalNC', { guibg = '#1d2021' }, false)
-    hi('NvimTreeStatusLine', { guibg = '#1d2021' }, false)
-    hi('NvimTreeStatusLineNC', { guibg = '#1d2021' }, false)
+    hi('NvimTreeNormal', { guibg = '#252525' }, false)
+    hi('NvimTreeNormalNC', { guibg = '#252525' }, false)
+    hi('NvimTreeStatusLine', { guibg = '#252525' }, false)
+    hi('NvimTreeStatusLineNC', { guibg = '#252525' }, false)
     hi('NvimTreeVertSplit', { guifg = '#282828' }, false)
   elseif config.plugins.specify.gruvbox.borders == false then
     hi('NvimTreeVertSplit', { guifg = '#282828' }, false)
