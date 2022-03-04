@@ -40,6 +40,29 @@ You can uninstall nvcodark removing these directories:
 - `~/.config/nvim`: NvCoDark config
 - `~/.cache/nvim`: Cache of nvim like lsps logs
 
+## Showcase
+
+Some themes (not all)
+
+### Catppuccin
+
+![catppuccin](./.misc/showcase/catppuccin-nvcodark.png)
+
+### Everforest
+![everforest](./.misc/showcase/everforest-nvcodark.png)
+
+### Gruvbox
+![gruvbox](./.misc/showcase/gruvbox-nvcodark.png)
+
+### Material
+![material](./.misc/showcase/material-nvcodark.png)
+
+### Onedark
+![onedark](./.misc/showcase/onedark.png)
+
+### Tokyonight
+![tokyonight](./.misc/showcase/tokyonight.png)
+
 ## Creating your config
 
 By default nvcodark reads a file named `~/.config/nvim/lua/default_rc.lua`, it file is tracked
@@ -334,11 +357,3 @@ config.custom = {
 It will load a file in `~/.config/nvim/lua/custom/requests.lua`
 
 The value is if you want to enable it or not (boolean val)
-
-## Galery
-
-![nvcodark1](./.misc/nvcodark1.png)
-![nvcodark2](./.misc/nvcodark2.png)
-![nvcodark3](./.misc/nvcodark3.png)
-
-> Using [cosmic-ui](https://github.com/CosmicNvim/cosmic-ui) for renaming and code actions
