@@ -71,8 +71,8 @@ function M.setup ()
       -- the 'curved' border is a custom border type
       -- not natively supported but implemented in this plugin.
       border = 'curved',
-      width = 100,
-      height = 100,
+      width = 125,
+      height = 55,
       highlights = {
         border = "TelescopeBorder", -- using telescope border
         background = "Normal",
