@@ -1,19 +1,14 @@
-local g = vim.g
-local opt = vim.opt
+local config = require('config')
+local M = {}
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.smartindent = false
-opt.autoindent = true
+function M.load_values (obj, conf)
+  for name, value in pairs(conf) do
+    obj[name] = value
+  end
+end
 
-opt.number = true
-opt.cursorline = true
+for optname, optconf in pairs(config.general) do
+  M.load_values(vim[optname], optconf)
+end
 
-opt.mouse = 'a'
-opt.clipboard = 'unnamedplus'
-
-opt.wrap = false
-opt.showmode = false
-
-opt.termguicolors = true
+return M

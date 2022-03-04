@@ -7,6 +7,31 @@ config.lualine = {
   theme = 'tokyonight'
 }
 
+config.general = {
+  -- configure normal neovim in lua format!
+  -- you can add ALL neovim option, the general variables loader
+  -- will call neovim to setup it! but this only works for opt and g
+  opt = {
+    tabstop = 2,
+    shiftwidth = 2,
+    expandtab = true,
+    smartindent = false,
+    autoindent = true,
+
+    number = true,
+    cursorline = true,
+
+    mouse = 'a',
+    clipboard = 'unnamedplus',
+
+    wrap = false,
+    showmode = false,
+
+    termguicolors = true
+  },
+  g = {},
+}
+
 config.tabbar = {
   backend = 'bufferline', -- lualine | bufferline | none: none to don't load tabbar
   options = {}, -- the options for the backend
