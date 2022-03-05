@@ -51,6 +51,7 @@ return require('packer').startup(function()
   use 'yashguptaz/calvera-dark.nvim'
   use 'sainnhe/everforest'
   use {"akinsho/toggleterm.nvim"}
+  use { "mangeshrex/everblush.vim" }
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do

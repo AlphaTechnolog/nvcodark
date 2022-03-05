@@ -60,6 +60,10 @@ config.plugins = {
     toggleterm = {},
   },
   specify = {
+    everblush = {
+      tree_contrast = true,
+      borders = true,
+    },
     everforest = {
       italic = true,
       italic_comment = false,
