@@ -2,7 +2,7 @@
 
 Another attempt to make of neovim a complete IDE.
 
-![nvcodark1](./.misc/nvcodark1.png)
+![everblush](./.misc/showcase/everblush-nvcodark.png)
 
 ## Thanks to
 
