@@ -62,7 +62,7 @@ config.plugins = {
   specify = {
     everblush = {
       tree_contrast = true,
-      borders = true,
+      borders = false,
     },
     everforest = {
       italic = true,

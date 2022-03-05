@@ -46,6 +46,9 @@ function M.apply_tree_contrast (palette)
   M.h('NvimTreeVertSplit', { guibg = palette.darkbg })
   M.h('NvimTreeStatusLine', { guibg = palette.darkbg })
   M.h('NvimTreeStatusLineNC', { guibg = palette.darkbg })
+  if not config.plugins.specify.everblush.borders then
+    M.h('NvimTreeVertSplit', { guifg = palette.bg, guibg = palette.bg })
+  end
 end
 
 function M.enable ()
