@@ -63,6 +63,9 @@ Some themes (not all)
 ### Tokyonight
 ![tokyonight](./.misc/showcase/tokyonight-nvcodark.png)
 
+### Everblush
+![everblush](./.misc/showcase/everblush-nvcodark.png)
+
 ## Creating your config
 
 By default nvcodark reads a file named `~/.config/nvim/lua/default_rc.lua`, it file is tracked
@@ -94,6 +97,7 @@ I will add more but in this moments it only support these themes:
 - onedarker (by me :D)
 - pywal (by me :D)
 - everforest
+- everblush (by Mangeshrex)
 
 ### Enabling a theme
 

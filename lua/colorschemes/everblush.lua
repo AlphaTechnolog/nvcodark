@@ -37,6 +37,8 @@ function M.custom_highlights (palette)
   M.h('NvimTreeStatusLineNC', { guibg = palette.bg })
   M.h('StatusLine', { guibg = palette.bg })
   M.h('TelescopeBorder', { guifg = palette.black })
+  M.h('NvimTreeFolderIcon', { guifg = palette.blue })
+  M.h('NvimTreeFoldername', { guifg = palette.blue })
 end
 
 function M.apply_tree_contrast (palette)
