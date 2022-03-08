@@ -60,6 +60,9 @@ config.plugins = {
     toggleterm = {},
   },
   specify = {
+    aquarium = {
+      tree_contrast = true,
+    },
     everblush = {
       tree_contrast = true,
       borders = false,

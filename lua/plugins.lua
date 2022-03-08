@@ -52,6 +52,7 @@ return require('packer').startup(function()
   use 'sainnhe/everforest'
   use {"akinsho/toggleterm.nvim"}
   use { "mangeshrex/everblush.vim" }
+  use 'frenzyexists/aquarium-vim'
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
