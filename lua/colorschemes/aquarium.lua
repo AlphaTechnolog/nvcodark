@@ -3,10 +3,12 @@ local config = require('config')
 local hi = vim.highlight.create
 
 function M.get_palette ()
+  local style = config.plugins.specify.aquarium.style or 'dark'
+  local isdark = style == 'dark'
   return {
-    bg = '#20202a',
-    lighten = '#2c2e3e',
-    darker_bg = '#1e1e27',
+    bg = isdark and '#20202a' or '#E6E6F1',
+    lighten = isdark and '#2c2e3e' or '#D5D4E0',
+    darker_bg = isdark and '#1e1e27' or '#CCCBD9',
   }
 end
 
@@ -36,8 +38,13 @@ function M.indents ()
 end
 
 function M.enable ()
+  -- using dark as default_style for aquarium
+  vim.g.aquarium_style = config.plugins.specify.aquarium.style or 'dark'
+  -- enabling theme
   vim.cmd [[ colorscheme aquarium ]]
+  -- fixing indents
   M.indents()
+  -- more highlights for tree
   if config.plugins.specify.aquarium.tree_contrast then
     M.tree_contrast()
   end

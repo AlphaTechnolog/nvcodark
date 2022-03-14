@@ -18,7 +18,11 @@ function M.enable ()
         guibg = {
           attribute = "bg",
           highlight = "NvimTreeNormal"
-        }
+        },
+        guifg = {
+          attribute = "fg",
+          highlight = "Normal",
+        },
       },
     },
     options = {

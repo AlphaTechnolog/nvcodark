@@ -62,6 +62,7 @@ config.plugins = {
   specify = {
     aquarium = {
       tree_contrast = true,
+      style = 'dark',
     },
     everblush = {
       tree_contrast = true,
