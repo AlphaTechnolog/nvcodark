@@ -83,7 +83,7 @@ config.plugins = {
     },
     tokyonight = {
       custom_folder_icons = true,
-      tree_contrast = false,
+      tree_contrast = true,
       style = 'night',
       italics = {
         comments = true,
