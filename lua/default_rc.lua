@@ -60,6 +60,11 @@ config.plugins = {
     toggleterm = {},
   },
   specify = {
+    night = {
+      nvim_tree = {
+        tree_contrast = true,
+      },
+    },
     aquarium = {
       tree_contrast = true,
       style = 'dark',

@@ -4,7 +4,7 @@ vim.cmd [[packadd packer.nvim]]
 
 require('packer').init({
   git = {
-    -- to prevent problems with slow connections
+    -- to prevent problems with slow internet connections
     clone_timeout = 10000000
   }
 })
@@ -53,6 +53,7 @@ return require('packer').startup(function()
   use {"akinsho/toggleterm.nvim"}
   use { "mangeshrex/everblush.vim" }
   use 'frenzyexists/aquarium-vim'
+  use {'NightCS/night.nvim', as = 'night'}
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
