@@ -60,6 +60,9 @@ config.plugins = {
     toggleterm = {},
   },
   specify = {
+    rosepine = {
+      tree_contrast = true,
+    },
     night = {
       nvim_tree = {
         tree_contrast = true,

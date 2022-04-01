@@ -2,11 +2,11 @@ local M = {}
 local config = require('config')
 
 function M.load ()
-  local present, config = pcall(require, 'colorschemes.' .. config.colorscheme)
+  local present, cs = pcall(require, 'colorschemes.' .. config.colorscheme)
   if not present then
-    error('[WARN/colorscheme] Cannot load colorscheme: ' .. M.colorscheme)
+    error('[WARN/colorscheme] Cannot load colorscheme: ' .. config.colorscheme .. ' -> ' .. cs)
   end
-  config.enable()
+  cs.enable()
 end
 
 return M

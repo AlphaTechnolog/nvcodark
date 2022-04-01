@@ -54,6 +54,7 @@ return require('packer').startup(function()
   use { "mangeshrex/everblush.vim" }
   use 'frenzyexists/aquarium-vim'
   use {'NightCS/night.nvim', as = 'night'}
+  use {'rose-pine/neovim', as = 'rosepine'}
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do

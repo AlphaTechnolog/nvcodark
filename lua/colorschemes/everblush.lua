@@ -40,6 +40,8 @@ function M.custom_highlights (palette)
   M.h('TelescopeBorder', { guifg = palette.black })
   M.h('NvimTreeFolderIcon', { guifg = palette.blue })
   M.h('NvimTreeFoldername', { guifg = palette.blue })
+  hi('IndentBlanklineChar', { guifg = palette.black }, false)
+  hi('NvimTreeIndentMarker', { guifg = palette.black }, false)
 end
 
 function M.apply_tree_contrast (palette)
