@@ -67,7 +67,7 @@ Some themes (not all)
 ![everblush](./.misc/showcase/everblush-nvcodark.png)
 
 ### Night
-![night](./.misc/showcase/night.png)
+![night](./.misc/showcase/night-nvcodark.png)
 
 ## Creating your config
 
