@@ -66,6 +66,9 @@ Some themes (not all)
 ### Everblush
 ![everblush](./.misc/showcase/everblush-nvcodark.png)
 
+### Night
+![night](./.misc/showcase/night.png)
+
 ## Creating your config
 
 By default nvcodark reads a file named `~/.config/nvim/lua/default_rc.lua`, it file is tracked
@@ -98,6 +101,7 @@ I will add more but in this moments it only support these themes:
 - pywal (by me :D)
 - everforest
 - everblush (by Mangeshrex)
+- night (by me :D)
 
 ### Enabling a theme
 

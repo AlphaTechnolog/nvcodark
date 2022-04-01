@@ -51,7 +51,6 @@ return require('packer').startup(function()
   use 'yashguptaz/calvera-dark.nvim'
   use 'sainnhe/everforest'
   use {"akinsho/toggleterm.nvim"}
-  use { "mangeshrex/everblush.vim" }
   use 'frenzyexists/aquarium-vim'
   use {'NightCS/night.nvim', as = 'night'}
   use {'rose-pine/neovim', as = 'rosepine'}
