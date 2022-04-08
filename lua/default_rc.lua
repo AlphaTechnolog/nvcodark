@@ -44,6 +44,7 @@ config.plugins = {
   -- {'navarasu/onedark.nvim', as = 'onedark'}
   additional_plugins = {},
   to_enable = {
+    icons = {},
     nvim_tree = { has_mappings = true, has_autocmds = true },
     telescope = { has_mappings = true },
     bufferline = {},
@@ -56,7 +57,6 @@ config.plugins = {
     lspcolors = {},
     cosmic_ui = {},
     notify = {},
-    icons = {},
     toggleterm = {},
   },
   specify = {
