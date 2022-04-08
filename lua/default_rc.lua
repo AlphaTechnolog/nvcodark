@@ -9,8 +9,8 @@ config.lualine = {
 
 config.general = {
   -- configure normal neovim in lua format!
-  -- you can add ALL neovim option, the general variables loader
-  -- will call neovim to setup it! but this only works for opt and g
+  -- you can add ALL neovim options, the general variables loader
+  -- will call neovim to setup it!
   opt = {
     tabstop = 2,
     shiftwidth = 2,
