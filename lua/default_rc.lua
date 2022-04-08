@@ -65,7 +65,7 @@ config.plugins = {
     },
     night = {
       nvim_tree = {
-        tree_contrast = true,
+        contrast = true,
       },
     },
     aquarium = {
