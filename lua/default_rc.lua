@@ -68,6 +68,11 @@ config.plugins = {
         contrast = true,
       },
     },
+    levuaska = {
+      nvim_tree = {
+        contrast = false
+      }
+    },
     aquarium = {
       tree_contrast = true,
       style = 'dark',
