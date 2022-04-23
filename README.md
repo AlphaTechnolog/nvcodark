@@ -100,8 +100,10 @@ I will add more but in this moments it only support these themes:
 - onedarker (by me :D)
 - pywal (by me :D)
 - everforest
-- everblush (by Mangeshrex)
+- everblush (by Mangeshrex & me :D)
 - night (by me :D)
+- iceberg
+- levuaska (by me :D)
 
 ### Enabling a theme
 
