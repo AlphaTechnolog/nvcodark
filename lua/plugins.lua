@@ -57,6 +57,7 @@ return require('packer').startup(function()
   use 'AlphaTechnolog/everblush.nvim'
   use 'levuaska/levuaska.nvim'
   use 'cocopon/iceberg.vim'
+  use 'Mofiqul/dracula.nvim'
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do

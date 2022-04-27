@@ -98,7 +98,7 @@ function M.get_opts ()
       },
       vue = {
         icon = "﵂",
-        color = M.get_color('vue'),
+        color = "#8cd7aa",
         name = "vue",
       },
     },
