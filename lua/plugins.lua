@@ -58,6 +58,7 @@ return require('packer').startup(function()
   use 'levuaska/levuaska.nvim'
   use 'cocopon/iceberg.vim'
   use 'Mofiqul/dracula.nvim'
+  use 'shaunsingh/nord.nvim'
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
