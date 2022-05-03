@@ -2,7 +2,7 @@
 
 Another attempt to make of neovim a complete IDE.
 
-![everblush](./.misc/showcase/everblush-nvcodark.png)
+![decay](./.misc/showcase/decay-nvcodark.png)
 
 ## Thanks to
 
@@ -43,6 +43,10 @@ You can uninstall nvcodark removing these directories:
 ## Showcase
 
 Some themes (not all)
+
+### Decay (my preferred :3)
+
+![decay](./.misc/showcase/decay-nvcodark.png)
 
 ### Catppuccin
 
@@ -90,7 +94,8 @@ your configuration may not be shared with others people.
 
 I will add more but in this moments it only support these themes:
 
-- tokyonight (default)
+- decay (default) (my preferred and by me :3)
+- tokyonight
 - ayu dark
 - calvera
 - catppuccin
