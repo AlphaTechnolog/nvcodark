@@ -9,7 +9,7 @@ function M.hide_statusline ()
     set_opt('laststatus', 0)
     return
   end
-  set_opt('laststatus', 2)
+  set_opt('laststatus', config.lualine.options.globalstatus == true and 3 or 2)
 end
 
 function M.autocmds ()

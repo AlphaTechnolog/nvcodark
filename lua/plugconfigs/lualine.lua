@@ -9,7 +9,60 @@ end
 
 function M.get_options()
   local default_config = {}
-  return tables.extend(default_config, config.lualine)
+  return tables.extend(default_config, config.lualine.options or {})
+end
+
+function M.get_default_sections ()
+  return {
+    lualine_a = {
+      {
+        function ()
+          local texts = {
+            n = 'Normal',
+            i = 'Insert',
+            v = 'Visual',
+            [''] = 'Visual',
+            V = 'VBlock',
+            c = 'Command',
+            no = 'No',
+            s = 'S',
+            S = 'S',
+            [''] = 'S',
+            ic = 'IC',
+            R = 'Replace',
+            Rv = 'RV',
+            cv = 'CV',
+            ce = 'CE',
+            r = 'R',
+            rm = 'RM',
+            ['r?'] = 'R',
+            ['!'] = '!',
+            t = 'T',
+          }
+
+          local function get_text()
+            local txt = texts[vim.fn.mode()]
+            if config.lualine.custom.mode.normal_txt then
+              return txt
+            else
+              return string.upper(txt)
+            end
+          end
+
+          if config.lualine.custom.mode.icon.enabled then
+            return config.lualine.custom.mode.icon.fmt .. get_text()
+          else
+            return get_text()
+          end
+        end
+      }
+    }
+  }
+end
+
+function M.get_sections ()
+  local default_sections = M.get_default_sections()
+  return tables.extend(default_sections, config.lualine.sections or {})
 end
 
 function M.get_tabline_config ()
@@ -28,10 +81,15 @@ function M.get_tabline_config ()
 end
 
 M.setup = function ()
-  lualine.setup {
+  local sections = config.lualine.sections or nil
+  if config.lualine.custom.customized_sections then
+    sections = M.get_sections()
+  end
+  lualine.setup(tables.extend(config.lualine, {
     options = M.get_options(),
+    sections = sections,
     tabline = M.get_tabline_config()
-  }
+  }))
 end
 
 return M
