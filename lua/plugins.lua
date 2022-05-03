@@ -54,11 +54,12 @@ return require('packer').startup(function()
   use 'frenzyexists/aquarium-vim'
   use {'NightCS/night.nvim', as = 'night'}
   use {'rose-pine/neovim', as = 'rosepine'}
-  use 'AlphaTechnolog/everblush.nvim'
+  use 'Everblush/everblush.nvim'
   use 'levuaska/levuaska.nvim'
   use 'cocopon/iceberg.vim'
   use 'Mofiqul/dracula.nvim'
   use 'shaunsingh/nord.nvim'
+  use {'decaycs/decay.nvim', as = 'decay'} -- by me, my new beautiful theme :3
 
   -- additional plugins
   for _, plug in ipairs(config.plugins.additional_plugins) do
