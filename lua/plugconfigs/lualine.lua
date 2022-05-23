@@ -4,7 +4,7 @@ local tables = require('utils.tables')
 local config = require('config')
 
 if not present then
-  error('[WARN/plugins/lualine]: Disabling lualine because cannot import it')
+  error('[WARN/plugins/lualine]: Disabling lualine because i cannot import it')
 end
 
 function M.get_options()
@@ -13,47 +13,51 @@ function M.get_options()
 end
 
 function M.get_default_sections ()
+  -- prehooks
+  local texts = {
+    n = 'Normal',
+    i = 'Insert',
+    v = 'Visual',
+    [''] = 'Visual',
+    V = 'VBlock',
+    c = 'Command',
+    no = 'No',
+    s = 'S',
+    S = 'S',
+    [''] = 'S',
+    ic = 'IC',
+    R = 'Replace',
+    Rv = 'RV',
+    cv = 'CV',
+    ce = 'CE',
+    r = 'R',
+    rm = 'RM',
+    ['r?'] = 'R',
+    ['!'] = '!',
+    t = 'T',
+  }
+
+  local function get_text()
+    local txt = texts[vim.fn.mode()]
+    if config.lualine.custom.mode.normal_txt then
+      return txt
+    else
+      return string.upper(txt)
+    end
+  end
+
   return {
     lualine_a = {
       {
         function ()
-          local texts = {
-            n = 'Normal',
-            i = 'Insert',
-            v = 'Visual',
-            [''] = 'Visual',
-            V = 'VBlock',
-            c = 'Command',
-            no = 'No',
-            s = 'S',
-            S = 'S',
-            [''] = 'S',
-            ic = 'IC',
-            R = 'Replace',
-            Rv = 'RV',
-            cv = 'CV',
-            ce = 'CE',
-            r = 'R',
-            rm = 'RM',
-            ['r?'] = 'R',
-            ['!'] = '!',
-            t = 'T',
-          }
-
-          local function get_text()
-            local txt = texts[vim.fn.mode()]
-            if config.lualine.custom.mode.normal_txt then
-              return txt
-            else
-              return string.upper(txt)
-            end
-          end
-
-          if config.lualine.custom.mode.icon.enabled then
-            return config.lualine.custom.mode.icon.fmt .. get_text()
-          else
-            return get_text()
-          end
+          return config.lualine.custom.mode.icon_fmt or ' '
+        end
+      }
+    },
+    lualine_z = {
+      {
+        function ()
+          return '舘' .. get_text()
         end
       }
     }

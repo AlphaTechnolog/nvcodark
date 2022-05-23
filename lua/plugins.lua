@@ -1,8 +1,43 @@
 local config = require('config')
 
-vim.cmd [[packadd packer.nvim]]
+local present, packer = pcall(require, 'packer')
 
-require('packer').init({
+local function clone_packer ()
+  local packer_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+
+  print("Cloning packer...")
+  vim.fn.delete(packer_path, 'rf') -- remove the dir first to prevent problems
+  vim.fn.system({
+    'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
+    '--depth', '20', packer_path
+  })
+
+  vim.cmd "packadd packer.nvim"
+  present, packer = pcall(require, 'packer')
+
+  if present then
+    print('Packer has been cloned successfully!')
+  else
+    print("Couldn't clone packer :c -> " .. packer) -- showing error
+  end
+end
+
+if not present then
+  clone_packer()
+else
+  vim.cmd [[ packadd packer.nvim ]]
+end
+
+packer.init({
+  compile_on_sync = true,
+  snapshot = nil,
+  display = {
+    open_fn = function ()
+      return require('packer.util').float {
+        border = 'single',
+      }
+    end
+  },
   git = {
     -- to prevent problems with slow internet connections
     clone_timeout = 10000000
@@ -11,12 +46,17 @@ require('packer').init({
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'lewis6991/impatient.nvim'
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  use 'karb94/neoscroll.nvim'
   use 'CantoroMC/ayu-nvim'
   use {'folke/tokyonight.nvim', as = 'tokyonight'}
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use 'akinsho/bufferline.nvim'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
