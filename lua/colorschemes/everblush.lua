@@ -1,6 +1,15 @@
 local M = {}
 local config = require('config')
 local hi = vim.highlight.create
+local present, everblush = pcall(require, 'everblush')
+
+if not present then
+  return {
+    setup = function ()
+      print('[WARN/plugins/everblush]: Cannot import everblush')
+    end
+  }
+end
 
 local bg = '#181f21'
 
@@ -9,7 +18,7 @@ function M.disable_borders ()
 end
 
 function M.enable ()
-  require('everblush').setup({ nvim_tree = {
+  everblush.setup({ nvim_tree = {
     contrast = config.plugins.specify.everblush.tree_contrast,
   }})
 

@@ -69,21 +69,6 @@ function M.get_sections ()
   return tables.extend(default_sections, config.lualine.sections or {})
 end
 
-function M.get_tabline_config ()
-  if config.tabbar.backend == 'lualine' then
-    return tables.extend({
-      lualine_a = {'buffers'},
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {'branch'},
-      lualine_z = {'tabs'}
-    }, config.tabbar.options)
-  else
-    return {}
-  end
-end
-
 M.setup = function ()
   local sections = config.lualine.sections or nil
   if config.lualine.custom.customized_sections then
@@ -92,7 +77,6 @@ M.setup = function ()
   lualine.setup(tables.extend(config.lualine, {
     options = M.get_options(),
     sections = sections,
-    tabline = M.get_tabline_config()
   }))
 end
 
