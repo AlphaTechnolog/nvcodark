@@ -1,10 +1,9 @@
-local M = {}
-local present, impatient = require('impatient')
-
-function M.setup ()
-  if present then
+return {
+  setup = function ()
+    local present, impatient = pcall(require, 'impatient')
+    if not present then
+      print('[WARN/plugins/impatient]: Cannot import impatient, disabling cache')
+    end
     impatient.enable_profile()
   end
-end
-
-return M
+}

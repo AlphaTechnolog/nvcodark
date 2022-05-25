@@ -55,6 +55,7 @@ config.plugins = {
   -- {'navarasu/onedark.nvim', as = 'onedark'}
   additional_plugins = {},
   to_enable = {
+    impatient = {}, -- neovim optimizations
     icons = {},
     nvim_tree = { has_mappings = true, has_autocmds = true },
     telescope = { has_mappings = true },
