@@ -60,7 +60,7 @@ config.plugins = {
     nvim_tree = { has_mappings = true, has_autocmds = true },
     telescope = { has_mappings = true },
     barbar = { has_autocmds = true, has_mappings = true }, -- autocmds for add offset between nvim-tree and barbar
-    neoscroll = {}, -- comment to disable smooth scrolling
+    -- neoscroll = {}, -- uncomment to enable smooth scrolling
     lualine = {},
     treesitter = {},
     colorizer = {},
