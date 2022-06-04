@@ -58,38 +58,39 @@ function M.get_options ()
       number = false,
       relativenumber = false,
       signcolumn = "yes"
+    },
+    renderer = {
+      add_trailing = false,
+      highlight_git = true,
+      highlight_opened_files = "none",
+      icons = {
+        glyphs = {
+          default = "",
+          symlink = "",
+          git = {
+            deleted = "",
+            ignored = "◌",
+            renamed = "➜",
+            staged = "✓",
+            unmerged = "",
+            unstaged = "✗",
+            untracked = "★",
+          },
+          folder = {
+            default = "",
+            empty = "",
+            empty_open = "",
+            open = "",
+            symlink = "",
+            symlink_open = "",
+          },
+        }
+      }
     }
   }
 end
 
-function M.setup_opts ()
-  vim.g.nvim_tree_add_trailing = 0
-  vim.g.nvim_tree_highlight_opened_files = 0
-  vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-      deleted = "",
-      ignored = "◌",
-      renamed = "➜",
-      staged = "✓",
-      unmerged = "",
-      unstaged = "✗",
-      untracked = "★",
-    },
-    folder = {
-      default = "",
-      empty = "",
-      empty_open = "",
-      open = "",
-      symlink = "",
-      symlink_open = "",
-    },
-  }
-end
-
 function M.setup ()
-  M.setup_opts()
   ntree.setup(M.get_options())
 end
 
