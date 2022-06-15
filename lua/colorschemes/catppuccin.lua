@@ -21,7 +21,6 @@ function M.custom_tree_contrast ()
     hi(highlight, { guibg = contrastcolor }, false)
   end
   hi('NvimTreeEndOfBuffer', { guibg = contrastcolor, guifg = contrastcolor }, false)
-  hi('NvimTreeVertSplit', { guifg = colors.black2, guibg = colors.black2 }, false)
 end
 
 function M.enable ()
