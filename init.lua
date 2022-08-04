@@ -1,8 +1,3 @@
--- TODO: Need to remake the README.md
+pcall(require, 'impatient')
+pcall(require("nvcodark.utils.start").run)
 
-local core = require('core')
-local ok, err = pcall(core.start)
-
-if not ok then
-  error('Cannot start nvcodark (some issues detected): ' .. err)
-end

@@ -1,5 +1,3 @@
-lua/rc.lua
-lua/custom/*
-!lua/custom/examples
 plugin
 plugin/packer_compiled.lua
+lua/rc.lua
