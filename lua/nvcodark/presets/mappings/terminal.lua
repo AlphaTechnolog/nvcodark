@@ -12,8 +12,6 @@ end
 
 function M.run ()
    map.set('n', '<C-t>', map.cmd('ToggleTerm'))
-   map.set('n', '<C-v>', map.cmd('ToggleTerm direction=vertical size=45'))
-   map.set('n', '<C-f>', map.cmd('ToggleTerm direction=tab'))
 
    -- fix some highlights
    highlight('StatusLineNC', { guibg = hi.get_bg('StatusLine') }, false)
