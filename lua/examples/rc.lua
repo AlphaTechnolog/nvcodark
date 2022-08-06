@@ -85,9 +85,9 @@ autocmd.FileType = {
 -- cursors fixes at nvim exit
 
 -- uncomment this if your terminal cursor is beam
-autocmd.VimLeave = function ()
-   vars.load('opt', 'guicursor', 'n:ver10')
-end
+-- autocmd.VimLeave = function ()
+--    vars.load('opt', 'guicursor', 'n:ver10')
+-- end
 
 -- uncomment this if your terminal cursor is underline
 -- autocmd.VimLeave = function ()
