@@ -48,6 +48,10 @@ Some themes (not all)
 
 ![decay](./.misc/showcase/decay-nvcodark.png)
 
+## Articblush
+
+![articblush](./.misc/showcase/articblush-nvcodark.pmg)
+
 ### Catppuccin
 
 ![catppuccin](./.misc/showcase/catppuccin-nvcodark.png)
@@ -72,6 +76,7 @@ Some themes (not all)
 
 ### Night
 ![night](./.misc/showcase/night-nvcodark.png)
+
 
 ## Creating your config
 
@@ -109,7 +114,8 @@ I will add more but in this moments it only support these themes:
 - night (by me :D)
 - iceberg
 - levuaska (by me :D)
-
+- articblush (by Synvatto & me :D)
+- 
 ### Enabling a theme
 
 Check if the theme name exists in the colorschemes folder (`~/.config/nvim/lua/colorschemes`)
