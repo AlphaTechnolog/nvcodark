@@ -23,4 +23,10 @@ function M.bulk (mappings)
    end
 end
 
+function M.bulk_single(mode, mappings)
+    local tomap = {}
+    tomap[mode] = mappings
+    M.bulk(tomap)
+end
+
 return M
