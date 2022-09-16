@@ -22,4 +22,8 @@ function M.get_fg(group)
   return M.color(group, 'foreground')
 end
 
+function M.override (group, properties)
+    vim.api.nvim_set_hl(0, group, properties)
+end
+
 return M

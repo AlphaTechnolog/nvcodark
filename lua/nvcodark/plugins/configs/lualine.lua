@@ -3,7 +3,6 @@ local present, lualine = pcall(require, 'lualine')
 local str = require "nvcodark.utils.str"
 local tables = require "nvcodark.utils.tables"
 local hi = require "nvcodark.utils.hi"
-local highlight = vim.highlight.create
 local plugcnf = require "nvcodark.tools.plugcnf"
 
 if not present then
@@ -23,8 +22,8 @@ function M.get_rounded_sections ()
       padding = { left = 0, right = 0 }
    }
 
-   highlight('StatusLine', { guibg = hi.get_bg('Normal'), guifg = hi.get_fg('Normal') }, false)
-   highlight('StatusLineNC', { guibg = hi.get_bg('Normal'), guifg = hi.get_fg('Normal') }, false)
+   hi.override('StatusLine', { bg = hi.get_bg('Normal'), fg = hi.get_fg('Normal') })
+   hi.override('StatusLineNC', { bg = hi.get_bg('Normal'), fg = hi.get_fg('Normal') })
 
    return {
       lualine_a = {

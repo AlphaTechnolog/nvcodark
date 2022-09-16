@@ -1,7 +1,6 @@
 local M = {}
 local map = require("nvcodark.tools.map")
 local hi = require "nvcodark.utils.hi"
-local highlight = vim.highlight.create
 
 function M.mappings ()
    map.set('n', '<C-n>', map.cmd('NvimTreeToggle'))
@@ -14,8 +13,8 @@ function M.highlights ()
    else
       bg = hi.get_bg('NvimTreeNormal')
    end
-   highlight('NvimTreeStatusLine', { guibg = bg }, false)
-   highlight('NvimTreeStatusLineNC', { guibg = bg }, false)
+   hi.override('NvimTreeStatusLine', { bg = bg })
+   hi.override('NvimTreeStatusLineNC', { bg = bg })
 end
 
 function M.setup ()
