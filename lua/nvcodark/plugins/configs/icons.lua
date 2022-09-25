@@ -40,6 +40,11 @@ function icons.setup()
             color = '#ecd3a0',
             name = 'js',
          },
+         ts = {
+            icon = 'ﯤ',
+            color = '#86aaec',
+            name = 'ts',
+         },
          nim = {
             icon = '',
             color = '#ecd3a0',

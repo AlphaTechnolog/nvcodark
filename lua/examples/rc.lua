@@ -7,6 +7,7 @@ local plugcnf = require "nvcodark.tools.plugcnf"
 
 -- lsp
 plugcnf.create('lsp', {
+    load_signature = true,
     servers = {
         pylsp = 'inherit',
         tsserver = 'inherit',

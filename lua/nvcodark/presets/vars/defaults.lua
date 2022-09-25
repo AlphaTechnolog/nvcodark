@@ -8,7 +8,7 @@ function M.run ()
          shiftwidth = 2,
          expandtab = true,
          smartindent = false,
-         autoindent = false,
+         autoindent = true,
 
          regexpengine = 1,
 
