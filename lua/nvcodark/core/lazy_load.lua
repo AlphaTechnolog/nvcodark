@@ -33,16 +33,4 @@ function M.on_file_open (plugname)
    }
 end
 
-function M.bufferline ()
-   M.lazy_load {
-      events = { "BufNewFile", "BufRead", "TabEnter" },
-      augroup_name = "BufferLineLazy",
-      plugins = "bufferline.nvim",
-
-      cond = function()
-         return #vim.fn.getbufinfo { buflisted = 1 } >= 1
-      end,
-   }
-end
-
 return M

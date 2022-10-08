@@ -30,6 +30,13 @@ return {
    { 'ray-x/lsp_signature.nvim' },
 
    {
+      'stevearc/aerial.nvim',
+      config = function ()
+         require 'aerial'.setup()
+      end
+   },
+
+   {
       'kyazdani42/nvim-web-devicons',
       config = function ()
          require 'nvcodark.plugins.configs.icons'.setup()
@@ -48,22 +55,6 @@ return {
       config = function ()
          require "nvcodark.plugins.configs.colorizer".setup()
       end,
-   },
-
-   {
-      'akinsho/bufferline.nvim',
-      opt = true,
-      setup = function ()
-         require "nvcodark.core.lazy_load".bufferline()
-      end,
-      config = function ()
-         require 'nvcodark.plugins.configs.bufferline'.setup()
-      end,
-   },
-
-   {
-      'famiu/bufdelete.nvim',
-      after = 'bufferline.nvim',
    },
 
    {
@@ -121,5 +112,13 @@ return {
       config = function ()
          require "nvcodark.plugins.configs.toggleterm".setup()
       end,
+   },
+
+   {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'},
+      config = function ()
+         require "nvcodark.plugins.configs.barbar".setup()
+      end
    }
 }
