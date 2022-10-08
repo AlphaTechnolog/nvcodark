@@ -296,12 +296,12 @@ function M.get_default_sections()
          {
             'diagnostics',
             sources = { 'nvim_diagnostic' },
-            separators = { left = nil, right = nil },
+            separator = { left = '', right = '' },
             diagnostics_color = {
-               error = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticError') },
-               warn = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticWarn') },
-               info = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticInfo') },
-               hint = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticHint') },
+               error = { fg = hi.get_bg('StatusLine'), bg = hi.get_fg('DiagnosticError') },
+               warn = { fg = hi.get_bg('StatusLine'), bg = hi.get_fg('DiagnosticWarn') },
+               info = { fg = hi.get_bg('StatusLine'), bg = hi.get_fg('DiagnosticInfo') },
+               hint = { fg = hi.get_bg('StatusLine'), bg = hi.get_fg('DiagnosticHint') },
             },
             symbols = {
                error = ' ',
@@ -312,6 +312,13 @@ function M.get_default_sections()
             colored = true,
             update_in_insert = true,
             always_visible = false,
+         },
+         {
+            function ()
+               return ''
+            end,
+            color = 'Normal',
+            separator = { left = nil, right = nil }
          },
          {
             'location',
