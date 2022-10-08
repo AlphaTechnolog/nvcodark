@@ -1,4 +1,4 @@
-local present, _ = pcall(require, 'tokyonight')
+local present, tokyonight = pcall(require, 'tokyonight')
 local plugins = require 'nvcodark.plugins'
 local vars = require 'nvcodark.tools.vars'
 
@@ -6,6 +6,11 @@ local theme = {}
 
 -- push tokyonight to plugins table
 plugins.push_plugin('folke/tokyonight.nvim')
+
+-- theme configuration, just the default options that will be passed to `tokyonight.setup`
+theme.default_cnf = {
+   style = 'moon',
+}
 
 -- lualine
 theme.lualine_theme = 'tokyonight'
@@ -16,12 +21,15 @@ if not present then
 end
 
 -- setup
-function theme.setup (variables)
-    -- tokyonight is configured using vim variables, loading they
-    vars.load_table(variables or {})
+function theme.setup (conf)
+   -- getting config
+   local cnf = conf or theme.default_cnf
 
-    -- loading tokyonight
-    vim.cmd [[ colorscheme tokyonight ]]
+   -- configuring tokyonight
+   tokyonight.setup(cnf)
+
+   -- applying tokyonight
+   vim.cmd [[ colorscheme tokyonight ]]
 end
 
 -- done

@@ -21,22 +21,6 @@ function M.lazy_load (payload)
    })
 end
 
-function M.colorizer ()
-   M.lazy_load({
-      events = {"BufRead", "BufNewFile"},
-      augroup_name = "ColorizerLazyLoading",
-      plugins = "nvim-colorizer.lua",
-      cond = function ()
-         local items = {"#", "rgb", "hsl", "rgba", "hsla"}
-         for _, val in ipairs(items) do
-            if vim.fn.search(val) ~= 0 then
-               return true
-            end
-         end
-      end
-   })
-end
-
 function M.on_file_open (plugname)
    M.lazy_load {
       events = { "BufRead", "BufWinEnter", "BufNewFile" },

@@ -2,6 +2,13 @@ return {
    {'lewis6991/impatient.nvim'},
    {'neoclide/vim-jsx-improve'},
 
+   {
+      'lewis6991/gitsigns.nvim',
+      config = function ()
+         require 'gitsigns'.setup()
+      end
+   },
+
    -- lsp management
    { "williamboman/mason.nvim" },
    { 'williamboman/mason-lspconfig.nvim' },
@@ -30,19 +37,9 @@ return {
 
    {
       'norcalli/nvim-colorizer.lua',
-      cmd = {
-         'ColorizerAttachToBuffer',
-         'ColorizerDetachFromBuffer',
-         'ColorizerReloadAllBuffers',
-         'ColorizerToggle',
-      },
       config = function ()
          require "nvcodark.plugins.configs.colorizer".setup()
       end,
-      setup = function ()
-         require "nvcodark.core.lazy_load".colorizer()
-      end,
-      opt = true,
    },
 
    {

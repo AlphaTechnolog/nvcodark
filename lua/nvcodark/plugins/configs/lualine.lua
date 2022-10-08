@@ -23,7 +23,7 @@ function M.get_rounded_sections ()
    }
 
    hi.override('StatusLine', { bg = hi.get_bg('Normal'), fg = hi.get_fg('Normal') })
-   hi.override('StatusLineNC', { bg = hi.get_bg('Normal'), fg = hi.get_fg('Normal') })
+   hi.override('IndentBlanklineChar', { bg = hi.get_bg('Normal'), fg = hi.get_fg('Normal') })
 
    return {
       lualine_a = {
@@ -99,8 +99,8 @@ function M.get_rounded_sections ()
    }
 end
 
--- powerline style
-function M.get_powerline_sections ()
+-- nvchad-based style (not 100% equal to nvchad one)
+function M.get_nvchad_sections ()
    return {
       lualine_a = {
          {
@@ -127,10 +127,9 @@ function M.get_powerline_sections ()
                }
 
                local filetype = vim.bo.filetype
-               local is_especial = tables.contains(exceptions, filetype)
+               local is_special = tables.contains(exceptions, filetype)
                local webdevicons = require 'nvim-web-devicons'
 
-               -- to avoid problems
                if is_special or filetype == "" or filetype == nil then
                   return false
                end
@@ -244,12 +243,125 @@ function M.get_powerline_sections ()
    }
 end
 
+function M.get_default_sections()
+   return {
+      lualine_a = {
+         {
+            function ()
+               return ''
+            end,
+            separator = { left = nil, right = '' },
+            color = { bg = hi.get_bg('CursorLine'), fg = hi.get_fg('Directory') }
+         },
+         {
+            'mode',
+            separator = { left = nil, right = '' }
+         },
+         {
+            function ()
+               local pwd = str.split(vim.loop.cwd(), '/')
+               local wdir = pwd[#pwd]
+
+               return ' ' .. wdir
+            end,
+            separator = { left = nil, right = '' },
+            color = { bg = hi.get_bg('CursorLine'), fg = hi.get_fg('Directory') }
+         },
+         {
+            'branch',
+            icon = '',
+            color = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('Directory') },
+            separator = { left = nil, right = '' }
+         },
+         {
+            'diff',
+            colored = true,
+            diff_color = {
+               added = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiffAdd') },
+               modified = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiffChange') },
+               removed = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiffDelete') },
+            },
+            symbols = {
+               added = ' ',
+               modified = ' ',
+               removed = ' ',
+            }
+         },
+      },
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {
+         {
+            'diagnostics',
+            sources = { 'nvim_diagnostic' },
+            separators = { left = nil, right = nil },
+            diagnostics_color = {
+               error = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticError') },
+               warn = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticWarn') },
+               info = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticInfo') },
+               hint = { bg = hi.get_bg('StatusLine'), fg = hi.get_fg('DiagnosticHint') },
+            },
+            symbols = {
+               error = ' ',
+               warn = ' ',
+               info = ' ',
+               hint = ' ',
+            },
+            colored = true,
+            update_in_insert = true,
+            always_visible = false,
+         },
+         {
+            'location',
+            color = { bg = hi.get_bg('CursorLine'), fg = hi.get_fg('Normal') },
+            separator = { right = nil, left = '' }
+         },
+         {
+            function ()
+               return ''
+            end,
+            color = { bg = hi.get_fg('LineNr'), fg = hi.get_fg('Directory') },
+            separator = { right = nil, left = '' },
+         },
+         {
+            'hostname',
+            color = { bg = hi.get_fg('LineNr'), fg = hi.get_fg('Normal') },
+            separator = { right = nil, left = nil },
+         },
+         {
+            function ()
+               return ''
+            end,
+            color = 'lualine_a_normal',
+            separator = { right = nil, left = '' },
+         },
+         {
+            'progress',
+            color = 'lualine_a_normal',
+            separator = { right = nil, left = nil }
+         }
+      },
+   }
+end
+
+function M._get_sections_by_style(style)
+   if style == 'nvchad' then
+      return M.get_nvchad_sections()
+   elseif style == 'rounded' then
+      return M.get_rounded_sections()
+   else
+      return M.get_default_sections()
+   end
+end
+
 function M.setup ()
    local cnf = plugcnf.get('lualine')
    local section_separators = cnf.normal_section_seps or { left = '', right = ''}
 
-   local style = cnf.style or "powerline_based"
-   local sections = style == "powerline_based" and M.get_powerline_sections() or M.get_rounded_sections()
+   local style = cnf.style or "default"
+   local sections = M._get_sections_by_style(style)
 
    lualine.setup {
       options = {
