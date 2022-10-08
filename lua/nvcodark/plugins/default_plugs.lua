@@ -9,6 +9,14 @@ return {
       end
    },
 
+   -- dashboard
+   {
+       'goolord/alpha-nvim',
+       config = function ()
+          require 'nvcodark.plugins.configs.alpha'.config()
+       end
+   },
+
    -- lsp management
    { "williamboman/mason.nvim" },
    { 'williamboman/mason-lspconfig.nvim' },
