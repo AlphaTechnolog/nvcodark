@@ -3,7 +3,7 @@ local lsp = require "nvcodark.utils.lsp"
 local plugcnf = require 'nvcodark.tools.plugcnf'
 
 local function load_lspconfig ()
-    local cnf = plugcnf.get('lsp')
+   local cnf = plugcnf.get('lsp')
 
    -- lsp imports
    local lspconfig = require 'lspconfig'
