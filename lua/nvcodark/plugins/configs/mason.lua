@@ -28,24 +28,37 @@ local function load_lspconfig ()
       vim.lsp.protocol.make_client_capabilities()
    )
 
-   -- loading code actions from lspsaga
+   -- enable lsp saga, also enables symbols in winbar
+   local saga = require 'lspsaga'
+
+   saga.init_lsp_saga {
+       symbol_in_winbar = {
+           in_custom = true
+       }
+   }
+
+   -- loading lspsaga modules
+   local diagnostics = require 'lspsaga.diagnostic'
    local action = require 'lspsaga.codeaction'
+   local rename = require 'lspsaga.rename'
+   local hover = require 'lspsaga.hover'
+   local finder = require 'lspsaga.finder'
 
    -- lsp configuration, just loads on_attach and capabilities
    local lsp_conf = {
       on_attach = function (client, bufnr)
          -- lsp-related keybindings
          lsp.mkbind(bufnr, 'n', '<space>e', vim.diagnostic.open_float)
-         lsp.mkbind(bufnr, 'n', '[d', require('lspsaga.diagnostic').goto_prev)
-         lsp.mkbind(bufnr, 'n', ']d', require('lspsaga.diagnostic').goto_next)
-         lsp.mkbind(bufnr, 'n', 'sd', require('lspsaga.diagnostic').show_line_diagnostics)
+         lsp.mkbind(bufnr, 'n', '[d', diagnostics.goto_prev)
+         lsp.mkbind(bufnr, 'n', ']d', diagnostics.goto_next)
+         lsp.mkbind(bufnr, 'n', 'sd', diagnostics.show_line_diagnostics)
          -- lsp.mkbind(bufnr, 'n', 'gd', require('lspsaga.definition').preview_definition)
          lsp.mkbind(bufnr, 'n', 'gh', function ()
-            require 'lspsaga.finder':lsp_finder()
+            finder:lsp_finder()
          end)
-         lsp.mkbind(bufnr, 'n', 'K', function () require('lspsaga.hover'):render_hover_doc() end)
+         lsp.mkbind(bufnr, 'n', 'K', function () hover:render_hover_doc() end)
          lsp.mkbind(bufnr, 'n', 'gi', vim.lsp.buf.implementation)
-         lsp.mkbind(bufnr, 'n', 'rn', require('lspsaga.rename').lsp_rename)
+         lsp.mkbind(bufnr, 'n', 'rn', rename.lsp_rename)
          lsp.mkbind(bufnr, 'n', '<space>ca', function ()
             action:code_action()
          end)
