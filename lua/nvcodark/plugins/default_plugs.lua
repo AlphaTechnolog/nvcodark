@@ -124,5 +124,19 @@ return {
       config = function ()
          require "nvcodark.plugins.configs.barbar".setup()
       end,
-   }
+   },
+
+   {
+      'lukas-reineke/indent-blankline.nvim',
+      opt = true,
+      setup = function ()
+         require 'nvcodark.core.lazy_load'.on_file_open 'indent-blankline.nvim'
+      end,
+      config = function ()
+         require 'indent_blankline'.setup {
+            show_current_context = true,
+            show_current_context_start =true 
+         }
+      end
+   },
 }
