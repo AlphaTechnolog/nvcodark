@@ -4,7 +4,7 @@ function M.run (mod, cfg)
    local ok, err = pcall(mod.run, cfg or nil)
 
    if not ok then
-      error('Cannot run preset ' .. preset .. ': ' .. err)
+      error('Cannot run preset: ' .. err)
    end
 end
 
