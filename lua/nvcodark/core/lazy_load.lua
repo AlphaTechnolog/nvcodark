@@ -1,3 +1,4 @@
+-- Thanks to NvChad source-code, it was used as code-reference
 local M = {}
 local autocmd = vim.api.nvim_create_autocmd
 

@@ -117,8 +117,12 @@ return {
    {
       'romgrk/barbar.nvim',
       requires = {'kyazdani42/nvim-web-devicons'},
+      opt = true,
+      setup = function ()
+         require 'nvcodark.core.lazy_load'.on_file_open('barbar.nvim')
+      end,
       config = function ()
          require "nvcodark.plugins.configs.barbar".setup()
-      end
+      end,
    }
 }
