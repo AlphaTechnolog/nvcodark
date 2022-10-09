@@ -4,6 +4,10 @@ return {
 
    {
       'lewis6991/gitsigns.nvim',
+      opt = true,
+      setup = function ()
+         require 'nvcodark.core.lazy_load'.on_file_open 'gitsigns.nvim'
+      end,
       config = function ()
          require 'gitsigns'.setup()
       end
