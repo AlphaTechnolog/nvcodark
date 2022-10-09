@@ -1,6 +1,11 @@
 return {
    {'lewis6991/impatient.nvim'},
-   {'neoclide/vim-jsx-improve'},
+
+   {
+      'neoclide/vim-jsx-improve',
+      opt = true,
+      ft = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
+   },
 
    {
       'lewis6991/gitsigns.nvim',
