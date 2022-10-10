@@ -17,6 +17,7 @@ function M.setup ()
       },
       indent = {
          enable = true,
+         disable = {'python'}
       }
    }
 end
