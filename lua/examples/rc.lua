@@ -5,10 +5,23 @@ local presets = require "nvcodark.presets"
 local map = require "nvcodark.tools.map"
 local plugcnf = require "nvcodark.tools.plugcnf"
 
+-- adds support to nim files
+--[[ SNIP
+
+local plugins = require "nvcodark.plugins"
+
+plugins.push_plugin {
+    'alavis/nim.nvim',
+    ft = 'nim'
+}
+
+-- ENDSNIP ]]
+
 -- lsp
 plugcnf.create('lsp', {
     load_signature = true,
     servers = {
+        -- nimls = 'inherit', -- add intellisense and lsp-stuff to nim files
         pylsp = 'inherit',
         tsserver = 'inherit',
         sumneko_lua = function (server, attach, capabilities, flags)
