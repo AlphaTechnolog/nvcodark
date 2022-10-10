@@ -264,6 +264,7 @@ function M.get_default_sections()
 
                return ' ' .. wdir
             end,
+            padding = { left = 2 },
             separator = { left = nil, right = '' },
             color = { bg = hi.get_bg('CursorLine'), fg = hi.get_fg('Directory') }
          },
