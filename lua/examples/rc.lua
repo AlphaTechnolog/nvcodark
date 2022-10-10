@@ -109,12 +109,9 @@ autocmd.FileType = {
 -- end
 
 -- disable fold in nim files
-autocmd.FileType = {
-   'nim',
-   function ()
-      vars.load('opt', 'foldenable', false)
-   end
-}
+autocmd.FileType = {'nim', function ()
+    vars.load('opt', 'foldenable', false)
+end}
 
 -- additional mappings
 map.bulk {
