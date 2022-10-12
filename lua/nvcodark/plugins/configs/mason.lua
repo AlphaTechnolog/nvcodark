@@ -11,17 +11,21 @@ local function load_lspconfig ()
    local luasnip = require 'luasnip'
    local cmp = require 'cmp'
    local lspkind = require 'lspkind'
+   local fidget = require 'fidget'
 
-    -- loads lspsignature
-    if cnf.load_signature then
-        lspsignature.setup {
-            padding = ' ',
-            hint_prefix = ' ',
-            handler_opts = {
-                border = 'double',
-            },
-        }
-    end
+   -- loads fidget (preloader)
+  fidget.setup {}
+
+   -- loads lspsignature
+   if cnf.load_signature then
+       lspsignature.setup {
+           padding = ' ',
+           hint_prefix = ' ',
+           handler_opts = {
+               border = 'double',
+          },
+       }
+   end
 
    -- making capabilities
    local capabilities = require('cmp_nvim_lsp').update_capabilities(

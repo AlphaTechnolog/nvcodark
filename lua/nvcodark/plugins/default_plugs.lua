@@ -37,6 +37,7 @@ return {
    { 'glepnir/lspsaga.nvim', branch = 'main' },
    { 'onsails/lspkind.nvim' },
    { 'ray-x/lsp_signature.nvim' },
+   { 'j-hui/fidget.nvim' },
 
    {
       'stevearc/aerial.nvim',
